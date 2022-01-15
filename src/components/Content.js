@@ -1,6 +1,6 @@
 import React from 'react'
 import '../assests/css/Content.css'
-import { IconArrowLeft, IconArrowRight, IconFolder, IconNotification, IconSearch } from '../assests/icons/all'
+import { IconArrowLeft, IconArrowRight, IconNotification, IconSearch } from '../assests/icons/all'
 import { IconProgressList, LatestSalesList, progressList, TabLists } from '../data/ContentList'
 import IconProgress from './IconProgress'
 import ProgressBar from './ProgressBar'
@@ -101,7 +101,9 @@ const Content = ({margin}) => {
                     <div className="col-card-2">
                         <h3 className='title'>Income</h3>
                         <div className="body">
-                            <div className="chart"></div>
+                            <div className="chart">
+                                <img src="https://i.postimg.cc/3r28jWWr/image.png" alt="Income" />
+                            </div>
                             <button>Withdraw Earning</button>
                         </div>
                     </div>
@@ -150,8 +152,13 @@ const Content = ({margin}) => {
                         <ProgressBar key={color} name={name} percent={percent} color={color} />
                     ))}
                 </div>
-
-                <p style={{ margin: "20px", marginTop: "50px" }}>Affiliate Impressions</p>
+                
+                <div className="col2">
+                    <p style={{ margin: "20px", marginTop: "50px" }}>Affiliate Impressions</p>
+                    <div className="chart">
+                        <img src="https://i.postimg.cc/25qbCmGq/image.png" alt="Affiliate" />
+                    </div>
+                </div>
             </div>
         </div>
     )
