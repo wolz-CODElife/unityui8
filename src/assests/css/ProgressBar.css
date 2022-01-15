@@ -1,0 +1,15 @@
+.progress{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.progressbar{
+    width: 100%;
+    border-radius: 12px;
+    background: #E4E4E4;
+    height: 8px;
+}
+.progressbar .innerbar {
+    border-radius: 12px;
+    height: 100%;
+}

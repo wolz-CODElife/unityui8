@@ -1,0 +1,23 @@
+.iconProgress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+}
+.iconProgress .icon {
+    border-radius: 12px;
+    width: 48px;
+    object-fit: contain;
+}
+.iconProgress .progress {
+    width: 64px;
+    object-fit: contain;
+    filter: opacity(0.7);
+    transition: 0.4s ease;
+}
+.iconProgress .progress:hover {
+    filter: opacity(1);
+}
+.iconProgress div p {
+    color: #808191;
+}

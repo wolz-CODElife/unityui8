@@ -1,0 +1,4 @@
+@import '_variables.css';
+.layout {
+    min-height: 100vh;
+}

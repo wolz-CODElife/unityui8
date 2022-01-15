@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import Sidebar from './components/Sidebar'
+import './assests/css/App.css'
+import Content from './components/Content'
 
-function App() {
+
+const App = () => {
+  const [collapsed, setCollapsed] = useState(false)
+  const [width, setWidth] = useState(window.innerWidth)
+
+  const checkSize = () => {
+    if(window.innerWidth < 1024) {
+      setCollapsed(true)
+    }else{
+      setCollapsed(false)
+    }
+    setWidth((window.innerWidth > 0) ? window.innerWidth : window.screen.width);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', checkSize);
+    return () => {
+      window.removeEventListener('resize', checkSize);
+    };
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='layout'>
+      <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
+      <Content margin={`${width <= 450 ? '0px' : collapsed? '96px': '250px'}`} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
